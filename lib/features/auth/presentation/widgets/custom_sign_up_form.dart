@@ -1,0 +1,91 @@
+import 'package:clutch/core/utils/app_assets.dart';
+import 'package:clutch/core/utils/app_colors.dart';
+import 'package:clutch/core/utils/app_strings.dart';
+import 'package:clutch/core/widgets/custom_btn.dart';
+import 'package:clutch/features/auth/presentation/auth_cubit/cubit/auth_cubit.dart';
+import 'package:clutch/features/auth/presentation/auth_cubit/cubit/auth_state.dart';
+import 'package:clutch/features/auth/presentation/widgets/custom_text_field.dart';
+import 'package:clutch/features/auth/presentation/widgets/terms_and_condition.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+class CustomSignUpForm extends StatelessWidget {
+  const CustomSignUpForm({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<AuthCubit, AuthState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
+        return Form(
+          key: authCubit.signupForm,
+          child: Column(
+            children: [
+              CustomTextFormField(
+                hintText: AppStrings.name,
+                onChanged: (name) {
+                  authCubit.name = name;
+                },
+              ),
+              CustomTextFormField(
+                hintText: AppStrings.email,
+                onChanged: (email) {
+                  authCubit.email = email;
+                },
+              ),
+              CustomTextFormField(
+                hintText: AppStrings.password,
+                onChanged: (password) {
+                  authCubit.password = password;
+                },
+                suffixIcon: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 15),
+                  child: Image.asset(Assets.assetsImagesHide,
+                      height: 5, width: 18),
+                ),
+              ),
+              CustomTextFormField(
+                hintText: AppStrings.confirmPassword,
+                onChanged: (confirmPassword) {
+                  authCubit.confirmPassword = confirmPassword;
+                },
+                suffixIcon: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 15),
+                  child: Image.asset(Assets.assetsImagesHide,
+                      height: 5, width: 18),
+                ),
+              ),
+              CustomTextFormField(
+                  hintText: AppStrings.mobilePhone,
+                  onChanged: (mobilePhone) {
+                    authCubit.mobilePhone = mobilePhone;
+                  },
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly]),
+              const TermsAbdConditionWidget(),
+              const SizedBox(height: 20),
+              CustomBtn(
+                onPressed: () {
+                  if (authCubit.termsAndConditionCheckBoxValue == true) {
+                    if (authCubit.signupForm.currentState!.validate()) {
+                      authCubit.signUpWithEmailAndPassword();
+                    }
+                  }
+                },
+                text: AppStrings.signUp,
+                height: 45,
+                width: double.infinity,
+                color: AppColors.primaryColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+              ),
+              const SizedBox(height: 15),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "915489835939",
+    "project_id": "clutch-a2f49",
+    "storage_bucket": "clutch-a2f49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915489835939:android:57b2882c9b1651fa9ca816",
+        "android_client_info": {
+          "package_name": "com.crixels.clutch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915489835939-sru8j8imt76e6ke0g2i6350va8l8ovcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE72qmUBISfd4eQZDglxOxeuQppiKvsTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915489835939-sru8j8imt76e6ke0g2i6350va8l8ovcc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "915489835939-fpg021jrn2qr4eb6qkptmgj2kktq47j6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.clutch.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

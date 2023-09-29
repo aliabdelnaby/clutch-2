@@ -1,0 +1,46 @@
+import 'package:clutch/core/utils/app_assets.dart';
+import 'package:clutch/core/utils/app_strings.dart';
+import 'package:clutch/core/utils/app_text_style.dart';
+import 'package:clutch/features/auth/presentation/widgets/custom_sign_up_form.dart';
+import 'package:clutch/features/auth/presentation/widgets/have_an_account.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            const SizedBox(width: 15),
+            Text(
+              AppStrings.createAnAccount,
+              style: CustomTextStyle.robotow600style15,
+            ),
+            const SizedBox(width: 0),
+            SvgPicture.asset(
+              Assets.assetsImagesLogoappbar,
+              height: 32,
+              width: 30,
+            ),
+          ],
+        ),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 44),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: SizedBox(height: 119)),
+            SliverToBoxAdapter(child: CustomSignUpForm()),
+            SliverToBoxAdapter(child: HaveAnAccount()),
+            SliverToBoxAdapter(child: SizedBox(height: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
