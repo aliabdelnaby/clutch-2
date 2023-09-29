@@ -1,3 +1,4 @@
+import 'package:clutch/core/functions/navigation.dart';
 import 'package:clutch/core/utils/app_colors.dart';
 import 'package:clutch/core/utils/app_strings.dart';
 import 'package:clutch/core/widgets/custom_btn.dart';
@@ -8,6 +9,7 @@ import 'package:clutch/features/auth/presentation/widgets/terms_and_condition.da
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/functions/custom_toast.dart';
 
 class CustomSignUpForm extends StatelessWidget {
   const CustomSignUpForm({super.key});
@@ -15,7 +17,14 @@ class CustomSignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is SignUpSuccessState) {
+          showToast("Account Created Successfully");
+          customNavigate(context, '/loginviewwithemail');
+        } else if (state is SignUpFailureState) {
+          showToast(state.errMessage);
+        }
+      },
       builder: (context, state) {
         AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
         return Form(
@@ -79,21 +88,25 @@ class CustomSignUpForm extends StatelessWidget {
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly]),
               const TermsAbdConditionWidget(),
               const SizedBox(height: 20),
-              CustomBtn(
-                onPressed: () {
-                  if (authCubit.termsAndConditionCheckBoxValue == true) {
-                    if (authCubit.signupForm.currentState!.validate()) {
-                      authCubit.signUpWithEmailAndPassword();
-                    }
-                  }
-                },
-                text: AppStrings.signUp,
-                height: 45,
-                width: double.infinity,
-                color: AppColors.primaryColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-              ),
+              state is SignUpLoadingState
+                  ? CircularProgressIndicator(
+                      color: AppColors.primaryColor,
+                    )
+                  : CustomBtn(
+                      onPressed: () {
+                        if (authCubit.termsAndConditionCheckBoxValue == true) {
+                          if (authCubit.signupForm.currentState!.validate()) {
+                            authCubit.signUpWithEmailAndPassword();
+                          }
+                        }
+                      },
+                      text: AppStrings.signUp,
+                      height: 45,
+                      width: double.infinity,
+                      color: AppColors.primaryColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                    ),
               const SizedBox(height: 15),
             ],
           ),

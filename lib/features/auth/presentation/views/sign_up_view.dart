@@ -1,3 +1,4 @@
+import 'package:clutch/core/functions/navigation.dart';
 import 'package:clutch/core/utils/app_assets.dart';
 import 'package:clutch/core/utils/app_strings.dart';
 import 'package:clutch/core/utils/app_text_style.dart';
@@ -30,14 +31,20 @@ class SignUpView extends StatelessWidget {
           ],
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 44),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 44),
         child: CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(child: SizedBox(height: 119)),
-            SliverToBoxAdapter(child: CustomSignUpForm()),
-            SliverToBoxAdapter(child: HaveAnAccount()),
-            SliverToBoxAdapter(child: SizedBox(height: 20)),
+            const SliverToBoxAdapter(child: SizedBox(height: 119)),
+            const SliverToBoxAdapter(child: CustomSignUpForm()),
+            SliverToBoxAdapter(
+              child: HaveAnAccount(
+                onTap: () {
+                  customReplacementNavigate(context, '/loginviewwithemail');
+                },
+              ),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 20)),
           ],
         ),
       ),
