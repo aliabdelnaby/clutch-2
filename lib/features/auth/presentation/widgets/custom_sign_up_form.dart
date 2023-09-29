@@ -1,4 +1,3 @@
-import 'package:clutch/core/utils/app_assets.dart';
 import 'package:clutch/core/utils/app_colors.dart';
 import 'package:clutch/core/utils/app_strings.dart';
 import 'package:clutch/core/widgets/custom_btn.dart';
@@ -40,22 +39,36 @@ class CustomSignUpForm extends StatelessWidget {
                 onChanged: (password) {
                   authCubit.password = password;
                 },
-                suffixIcon: Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 15),
-                  child: Image.asset(Assets.assetsImagesHide,
-                      height: 5, width: 18),
+                suffixIcon: IconButton(
+                  color: AppColors.primaryColor,
+                  icon: Icon(
+                    authCubit.obscurePasswordTextValue == true
+                        ? Icons.visibility_outlined
+                        : Icons.visibility_off_outlined,
+                  ),
+                  onPressed: () {
+                    authCubit.obscurePasswordText();
+                  },
                 ),
+                obscureText: authCubit.obscurePasswordTextValue,
               ),
               CustomTextFormField(
                 hintText: AppStrings.confirmPassword,
                 onChanged: (confirmPassword) {
                   authCubit.confirmPassword = confirmPassword;
                 },
-                suffixIcon: Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 15),
-                  child: Image.asset(Assets.assetsImagesHide,
-                      height: 5, width: 18),
+                suffixIcon: IconButton(
+                  color: AppColors.primaryColor,
+                  icon: Icon(
+                    authCubit.obscurePasswordTextValue == true
+                        ? Icons.visibility_outlined
+                        : Icons.visibility_off_outlined,
+                  ),
+                  onPressed: () {
+                    authCubit.obscurePasswordText();
+                  },
                 ),
+                obscureText: authCubit.obscurePasswordTextValue,
               ),
               CustomTextFormField(
                   hintText: AppStrings.mobilePhone,

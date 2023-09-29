@@ -12,13 +12,15 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType,
     this.onChanged,
     this.onFieldSubmitted,
+    this.obscureText,
   });
   final String hintText;
-  final Widget? suffixIcon;
   final List<TextInputFormatter>? inputFormatters;
   final TextInputType? keyboardType;
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
+  final bool? obscureText;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class CustomTextFormField extends StatelessWidget {
         },
         onChanged: onChanged,
         onFieldSubmitted: onFieldSubmitted,
+        obscureText: obscureText ?? false,
         inputFormatters: inputFormatters,
         keyboardType: keyboardType,
         decoration: InputDecoration(
