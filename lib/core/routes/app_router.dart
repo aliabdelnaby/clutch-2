@@ -4,6 +4,7 @@ import 'package:clutch/features/auth/presentation/views/forgot_password_view.dar
 import 'package:clutch/features/auth/presentation/views/login_view_email.dart';
 import 'package:clutch/features/auth/presentation/views/sign_up_options.dart';
 import 'package:clutch/features/auth/presentation/views/sign_up_view.dart';
+import 'package:clutch/features/auth/presentation/views/verification_code.dart';
 import 'package:clutch/features/auth/presentation/widgets/terms_and_condition_body.dart';
 import 'package:clutch/features/home/presentation/views/home_page.dart';
 import 'package:clutch/features/onboarding/presentation/views/on_boarding_view.dart';
@@ -49,5 +50,9 @@ final GoRouter router = GoRouter(routes: [
     GoRoute(
     path: '/termsAndConditionBody',
     builder: ((context, state) => const TermsAndConditionBody()),
+  ),
+      GoRoute(
+    path: '/verificationCodePage',
+    builder: ((context, state) => const VerificationCodePage()),
   ),
 ]);
