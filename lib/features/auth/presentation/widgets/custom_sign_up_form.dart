@@ -20,7 +20,7 @@ class CustomSignUpForm extends StatelessWidget {
       listener: (context, state) {
         if (state is SignUpSuccessState) {
           showToast("Account Created Successfully");
-          customNavigate(context, '/loginviewwithemail');
+          customReplacementNavigate(context, '/loginviewwithemail');
         } else if (state is SignUpFailureState) {
           showToast(state.errMessage);
         }
