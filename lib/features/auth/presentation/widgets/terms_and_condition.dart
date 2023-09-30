@@ -1,7 +1,7 @@
-import 'package:clutch/core/functions/navigation.dart';
-import 'package:clutch/core/utils/app_strings.dart';
-import 'package:clutch/core/utils/app_text_style.dart';
-import 'package:clutch/features/auth/presentation/widgets/custom_check_box.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/app_text_style.dart';
+import 'custom_check_box.dart';
 import 'package:flutter/material.dart';
 
 class TermsAbdConditionWidget extends StatelessWidget {

@@ -1,5 +1,6 @@
-import 'package:clutch/core/routes/app_router.dart';
 import 'package:flutter/material.dart';
+
+import '../core/routes/app_router.dart';
 
 class Clutch extends StatelessWidget {
   const Clutch({super.key});

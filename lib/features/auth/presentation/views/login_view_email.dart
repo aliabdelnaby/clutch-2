@@ -1,9 +1,9 @@
-import 'package:clutch/core/utils/app_assets.dart';
-import 'package:clutch/core/utils/app_colors.dart';
-import 'package:clutch/core/utils/app_strings.dart';
-import 'package:clutch/core/utils/app_text_style.dart';
-import 'package:clutch/core/widgets/custom_btn.dart';
-import 'package:clutch/features/auth/presentation/widgets/custom_forgot_and_create_account_text.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/widgets/custom_btn.dart';
+import '../widgets/custom_forgot_and_create_account_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../widgets/custom_text_field.dart';

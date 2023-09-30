@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../widgets/custom_logo_bar.dart';
 import '../widgets/get_buttons.dart';
 import '../widgets/onboarding_view_body_widget.dart';

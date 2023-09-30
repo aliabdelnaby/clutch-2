@@ -1,9 +1,9 @@
-import 'package:clutch/core/functions/navigation.dart';
-import 'package:clutch/core/utils/app_colors.dart';
-import 'package:clutch/core/utils/app_strings.dart';
-import 'package:clutch/core/widgets/custom_btn.dart';
-import 'package:clutch/features/onboarding/data/models/onboarding_model.dart';
-import 'package:clutch/features/onboarding/presentation/views/functions/on_boarding.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/widgets/custom_btn.dart';
+import '../../data/models/onboarding_model.dart';
+import '../views/functions/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class GetButtons extends StatelessWidget {

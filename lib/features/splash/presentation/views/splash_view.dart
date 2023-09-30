@@ -1,8 +1,8 @@
-import 'package:clutch/core/database/cache/cache_helper.dart';
-import 'package:clutch/core/functions/navigation.dart';
-import 'package:clutch/core/services/service_locator.dart';
-import 'package:clutch/core/utils/app_assets.dart';
-import 'package:clutch/core/utils/app_colors.dart';
+import '../../../../core/database/cache/cache_helper.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/services/service_locator.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

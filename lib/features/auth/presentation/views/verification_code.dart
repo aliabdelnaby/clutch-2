@@ -1,7 +1,8 @@
-import 'package:clutch/core/utils/app_colors.dart';
-import 'package:clutch/core/utils/app_strings.dart';
-import 'package:clutch/core/utils/app_text_style.dart';
-import 'package:clutch/core/widgets/custom_btn.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/widgets/custom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -40,7 +41,9 @@ class VerificationCodePage extends StatelessWidget {
             const SizedBox(height: 30),
             CustomBtn(
               backgroundColor: AppColors.primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                customNavigate(context, '/addYouCarView');
+              },
               text: AppStrings.submit,
               height: 48,
               width: double.infinity,
@@ -70,9 +73,6 @@ class VerificationCodePage extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class CustomPinCodeFields extends StatelessWidget {
   const CustomPinCodeFields({
