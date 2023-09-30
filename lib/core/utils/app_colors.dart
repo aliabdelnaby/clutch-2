@@ -10,4 +10,5 @@ abstract class AppColors {
   static Color onBoardingGrey = const Color(0xff3F4D4D);
   static Color white = const Color(0xffFFFFFF);
   static Color continueGrey = const Color(0xFF757575);
+  static Color addYouCarGrey = const Color(0xFF808080);
 }

@@ -34,7 +34,7 @@ abstract class CustomTextStyle {
     fontFamily: 'Roboto',
     color: AppColors.onBoardingGrey,
   );
-    static final robotow400style12 = TextStyle(
+  static final robotow400style12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     fontFamily: 'Roboto',
@@ -76,5 +76,11 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w200,
     fontFamily: 'Roboto',
     color: AppColors.primaryColor,
+  );
+  static final roboto700style18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'Roboto',
+    color: AppColors.addYouCarGrey,
   );
 }
