@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../core/database/cache/cache_helper.dart';
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/services/service_locator.dart';
@@ -19,13 +18,16 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    _controller = AnimationController(
-        duration: const Duration(seconds: 2), vsync: this);
+    _controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
     _controller.forward();
     bool isOnBoardingVisited =
         getIt<CacheHelper>().getData(key: 'isOnBoardingVisited') ?? false;
     if (isOnBoardingVisited == true) {
-      delayedNavigate(context, "/signupoptions");
+      // FirebaseAuth.instance.currentUser == null?
+      delayedNavigate(context, "/signupoptions")
+          // : delayedNavigate(context, "/homepage")
+          ;
     } else {
       delayedNavigate(context, "/onboarding");
     }

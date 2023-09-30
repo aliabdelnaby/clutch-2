@@ -30,8 +30,19 @@ class HomePage extends StatelessWidget {
               icon: const Icon(
                 Icons.exit_to_app,
               ),
-            )
+            ),
           ],
+        ),
+      ),
+      body: Center(
+        child: IconButton(
+          onPressed: () {
+            FirebaseAuth.instance.signOut();
+            customReplacementNavigate(context, '/signupoptions');
+          },
+          icon: const Icon(
+            Icons.logout,
+          ),
         ),
       ),
     );
