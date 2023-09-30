@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/widgets/custom_btn.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerificationCodePage extends StatelessWidget {
   const VerificationCodePage({super.key});

@@ -1,7 +1,8 @@
-import '../../../../core/utils/app_colors.dart';
-import '../auth_cubit/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/utils/app_colors.dart';
+import '../auth_cubit/cubit/auth_cubit.dart';
 
 class CustomCheckBox extends StatefulWidget {
   const CustomCheckBox({super.key});

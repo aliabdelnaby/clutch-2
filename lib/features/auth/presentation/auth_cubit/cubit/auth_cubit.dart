@@ -1,7 +1,8 @@
-import 'auth_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
@@ -39,7 +40,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   updateTermsAndConditionCheckBox({required newValue}) {
     termsAndConditionCheckBoxValue = newValue;
-    // emit(TermsAndComnditionUpateState());
+    emit(TermsAndComnditionUpateState());
   }
     obscurePasswordText() {
     if (obscurePasswordTextValue == true) {

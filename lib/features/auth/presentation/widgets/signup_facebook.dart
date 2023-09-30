@@ -1,7 +1,8 @@
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/app_text_style.dart';
 
 class SignUpFacebook extends StatefulWidget {
   const SignUpFacebook({
