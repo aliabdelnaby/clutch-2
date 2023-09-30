@@ -100,6 +100,7 @@ class CustomSignUpForm extends StatelessWidget {
                           }
                         }
                       },
+                      backgroundColor: AppColors.primaryColor,
                       text: AppStrings.signUp,
                       height: 45,
                       width: double.infinity,

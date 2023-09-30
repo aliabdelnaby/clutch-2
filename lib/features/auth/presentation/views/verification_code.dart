@@ -39,6 +39,7 @@ class VerificationCodePage extends StatelessWidget {
             const CustomPinCodeFields(),
             const SizedBox(height: 30),
             CustomBtn(
+              backgroundColor: AppColors.primaryColor,
               onPressed: () {},
               text: AppStrings.submit,
               height: 48,
@@ -47,12 +48,31 @@ class VerificationCodePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
+            const SizedBox(height: 7),
+            SizedBox(
+              height: 49,
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  AppStrings.resendCode,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.primaryColor,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+
+
 
 class CustomPinCodeFields extends StatelessWidget {
   const CustomPinCodeFields({

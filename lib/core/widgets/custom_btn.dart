@@ -1,4 +1,3 @@
-import 'package:clutch/core/utils/app_colors.dart';
 import 'package:clutch/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +10,7 @@ class CustomBtn extends StatelessWidget {
     required this.height,
     required this.width,
     this.shape,
+    required this.backgroundColor,
   });
 
   final Color? color;
@@ -19,6 +19,7 @@ class CustomBtn extends StatelessWidget {
   final double height;
   final double width;
   final OutlinedBorder? shape;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class CustomBtn extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: backgroundColor,
           shape: shape,
         ),
         child: Text(

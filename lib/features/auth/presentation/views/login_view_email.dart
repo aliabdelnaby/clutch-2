@@ -57,7 +57,9 @@ class LoginViewWithEmail extends StatelessWidget {
                 ),
                 const SizedBox(height: 22),
                 CustomBtn(
+                  
                   onPressed: () {},
+                  backgroundColor:  AppColors.primaryColor,
                   text: AppStrings.login,
                   height: 45,
                   width: double.infinity,

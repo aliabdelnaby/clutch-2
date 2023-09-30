@@ -24,6 +24,7 @@ class GetButtons extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             height: 42,
             width: 166,
+            backgroundColor: AppColors.primaryColor,
             text: AppStrings.getStarted,
             color: AppColors.primaryColor,
             onPressed: () {

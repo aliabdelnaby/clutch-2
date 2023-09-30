@@ -1,4 +1,5 @@
 import 'package:clutch/core/utils/app_assets.dart';
+import 'package:clutch/core/utils/app_colors.dart';
 import 'package:clutch/core/utils/app_strings.dart';
 import 'package:clutch/core/utils/app_text_style.dart';
 import 'package:clutch/core/widgets/custom_btn.dart';
@@ -42,6 +43,7 @@ class ForgotPasswordView extends StatelessWidget {
             ),
             const SizedBox(height: 28),
             CustomBtn(
+              backgroundColor: AppColors.primaryColor,
               onPressed: () {},
               text: AppStrings.resetYourPassword,
               height: 42,
