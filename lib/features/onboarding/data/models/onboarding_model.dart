@@ -16,20 +16,20 @@ class OnBoardingModel {
 
 List<OnBoardingModel> onBoardingData = [
   OnBoardingModel(
-    imagePath: Assets.assetsImagesOnBoarding1,
+    imagePath: Assets.assetsImagesOnboarding1,
     title: 'Peace Of Mind',
     subTitleOne: "CLUTCH HELPS YOU TO AVOID USING \n EXPIRED CAR PARTS, ",
     subTitleTwo: "WHICH CAN LEAD TO \n BREAK DOWNS AND SAFETY HAZARDS.",
   ),
   OnBoardingModel(
-    imagePath: Assets.assetsImagesOnBoarding2,
+    imagePath: Assets.assetsImagesOnboarding2,
     title: "Save Money",
     subTitleOne: "CLUTCH CAN HELP YOU TO SAVE MONEY \n ",
     subTitleTwo:
         "BY PREVENTING YOU FROM HAVING TO \n REPLACE CAR PARTS THAT DIDN’T EXPIRE.",
   ),
   OnBoardingModel(
-    imagePath: Assets.assetsImagesOnBoarding3,
+    imagePath: Assets.assetsImagesOnboarding3,
     title: "Extend the life of your car",
     subTitleOne:
         "BY USING CLUTCH TO TRACK THE EXPIRY \n DATES OF YOUR CAR PARTS,",

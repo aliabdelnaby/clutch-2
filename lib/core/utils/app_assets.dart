@@ -37,17 +37,17 @@ class Assets {
   /// assets/images/logoappbar.svg
   static const String assetsImagesLogoappbar = "assets/images/logoappbar.svg";
 
-  /// Assets for assetsImagesOnBoarding1
-  /// assets/images/onBoarding1.png
-  static const String assetsImagesOnBoarding1 = "assets/images/onBoarding1.png";
+  /// Assets for assetsImagesOnboarding1
+  /// assets/images/onboarding1.png
+  static const String assetsImagesOnboarding1 = "assets/images/onboarding1.png";
 
-  /// Assets for assetsImagesOnBoarding2
-  /// assets/images/onBoarding2.png
-  static const String assetsImagesOnBoarding2 = "assets/images/onBoarding2.png";
+  /// Assets for assetsImagesOnboarding2
+  /// assets/images/onboarding2.png
+  static const String assetsImagesOnboarding2 = "assets/images/onboarding2.png";
 
-  /// Assets for assetsImagesOnBoarding3
-  /// assets/images/onBoarding3.png
-  static const String assetsImagesOnBoarding3 = "assets/images/onBoarding3.png";
+  /// Assets for assetsImagesOnboarding3
+  /// assets/images/onboarding3.png
+  static const String assetsImagesOnboarding3 = "assets/images/onboarding3.png";
 
   /// Assets for assetsImagesShow
   /// assets/images/show.png
