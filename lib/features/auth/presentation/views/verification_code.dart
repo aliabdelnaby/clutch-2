@@ -1,7 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:clutch/core/functions/navigation.dart';
+import 'package:clutch/core/utils/app_colors.dart';
+import 'package:clutch/core/widgets/custom_btn.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -21,33 +21,30 @@ class VerificationCodePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
           children: [
-            const SizedBox(height: 50),
-            const Align(
+            const SizedBox(height: 200),
+            Align(
               child: Text(
                 "We have sent the verification Link to \n Your Email",
-                style: TextStyle(fontSize: 14),
+                style: CustomTextStyle.roboto700style20.copyWith(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 5),
-            Text(
-              'Please Check to continue',
-              style: CustomTextStyle.roboto700style20.copyWith(fontSize: 16),
-            ),
-            const SizedBox(height: 200),
-            Text(
-              'Press log out to re-login with your new account \n or close and open the app to refresh',
-              style: CustomTextStyle.roboto700style20.copyWith(fontSize: 16),
-            ),
-            IconButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-                customReplacementNavigate(context, '/signupoptions');
-              },
-              icon: const Icon(
-                Icons.logout,
+            const SizedBox(height: 20),
+            const Align(
+              child: Text(
+                'Please Check to continue \n and login with your new account',
+                textAlign: TextAlign.center,
               ),
             ),
+            const SizedBox(height: 50),
+            CustomBtn(
+                onPressed: () {
+                  customReplacementNavigate(context, '/loginviewwithemail');
+                },
+                text: AppStrings.go,
+                height: 50,
+                width: 100,
+                backgroundColor: AppColors.primaryColor)
           ],
         ),
       ),
