@@ -32,7 +32,7 @@ class VerificationCodePage extends StatelessWidget {
             const SizedBox(height: 20),
             const Align(
               child: Text(
-                'Please Check to continue \n and login with your new account',
+                'You will not be able to continue if you do not verify your email',
                 textAlign: TextAlign.center,
               ),
             ),

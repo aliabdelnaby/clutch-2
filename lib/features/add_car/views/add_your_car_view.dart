@@ -1,3 +1,6 @@
+import 'package:clutch/core/functions/navigation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '../../../core/utils/app_colors.dart';
 import '../../../core/widgets/custom_btn.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -27,6 +30,15 @@ class AddYouCarView extends StatelessWidget {
               Assets.assetsImagesLogoappbar,
               height: 32,
               width: 30,
+            ),
+            IconButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                customReplacementNavigate(context, '/signupoptions');
+              },
+              icon: const Icon(
+                Icons.logout,
+              ),
             ),
           ],
         ),

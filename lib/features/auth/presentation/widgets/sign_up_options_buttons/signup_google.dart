@@ -7,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-
 class SignUpGoogle extends StatefulWidget {
   const SignUpGoogle({
     super.key,
@@ -43,7 +42,7 @@ class _SignUpGoogleState extends State<SignUpGoogle> {
       children: [
         ElevatedButton(
           onPressed: () {
-            signInWithGoogle();
+            // signInWithGoogle();
           },
           onHover: (value) {
             setState(() {

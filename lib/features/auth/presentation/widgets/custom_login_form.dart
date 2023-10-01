@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '../../../../core/functions/custom_toast.dart';
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -17,8 +19,11 @@ class CustomLoginForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is LoginSuccessState) {
-          showToast("Login Successfully");
-          customReplacementNavigate(context, '/homepage');
+          // showToast("Please go to your email to verify your account");
+          if (FirebaseAuth.instance.currentUser!.emailVerified) {
+            customReplacementNavigate(context, '/AddYouCarView');
+            showToast("Login Successfully");
+          }
         } else if (state is LoginFailureState) {
           showToast(state.errMessage);
         }
