@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
-import 'package:flutter/material.dart';
 
 class CustomTitleLoginView extends StatelessWidget {
   const CustomTitleLoginView({

@@ -5,11 +5,11 @@ void checkStateChanges() {
   FirebaseAuth.instance.authStateChanges().listen((User? user) {
     if (user == null) {
       if (kDebugMode) {
-        print('User is currently signed out!');
+        print('=====User is currently signed out!=====');
       }
     } else {
       if (kDebugMode) {
-        print('User is signed in!');
+        print('=====User is signed in!=====');
       }
     }
   });

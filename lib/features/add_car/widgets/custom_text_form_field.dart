@@ -1,5 +1,5 @@
-import 'package:clutch/core/utils/app_colors.dart';
-import 'package:clutch/core/utils/app_text_style.dart';
+import '../../../core/utils/app_colors.dart';
+import '../../../core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -12,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         decoration: InputDecoration(
           hintText: hintText,
+          isDense: true,
           hintStyle: CustomTextStyle.roboto700style18,
           border: getBorderStyle(),
           enabledBorder: getBorderStyle(),

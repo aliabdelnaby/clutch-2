@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../core/functions/navigation.dart';
-import '../../../../core/utils/app_assets.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/app_text_style.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/app_text_style.dart';
 
-class SignUpEmail extends StatefulWidget {
-  const SignUpEmail({
+class SignUpFacebook extends StatefulWidget {
+  const SignUpFacebook({
     super.key,
   });
 
   @override
-  State<SignUpEmail> createState() => _SignUpEmailState();
+  State<SignUpFacebook> createState() => _SignUpFacebookState();
 }
 
-class _SignUpEmailState extends State<SignUpEmail> {
+class _SignUpFacebookState extends State<SignUpFacebook> {
   var isHover = false;
 
   @override
@@ -26,9 +23,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
-          onPressed: () {
-            customNavigate(context, '/loginviewwithemail');
-          },
+          onPressed: () {},
           onHover: (value) {
             setState(() {
               isHover = true;
@@ -36,25 +31,27 @@ class _SignUpEmailState extends State<SignUpEmail> {
           },
           style: ElevatedButton.styleFrom(
             elevation: 0,
-            backgroundColor: const Color(0xFFFFFFFF),
+            backgroundColor: Colors.blue,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
-            foregroundColor: isHover ? Colors.white : const Color(0xfff0f0f0),
+            foregroundColor: isHover ? Colors.blue : const Color(0xfff0f0f0),
           ),
           child: SizedBox(
             height: 50,
             width: 280,
             child: Row(
               children: [
-                SvgPicture.asset(
-                  Assets.assetsImagesEmail,
+                const Icon(
+                  FontAwesomeIcons.facebook,
+                  color: Colors.white,
+                  size: 28,
                 ),
                 const SizedBox(width: 50),
                 Text(
-                  AppStrings.continueWithEmail,
+                  AppStrings.continueWithFacebook,
                   style: CustomTextStyle.roboto500style14.copyWith(
-                    color: AppColors.continueGrey,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

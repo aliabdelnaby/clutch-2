@@ -27,7 +27,7 @@ abstract class AppStrings {
       termsAndCondition = "Terms and Condition",
       //!Forgot password
       forgottenPasswordAppBar = "Forgotten Password",
-      verificationCodeAbbBar = "Verification code",
+      verificationCodeAbbBar = "Verification Email",
       resendCode = "Resend Code",
       submit = "Submit",
       weHaveSentVerificationCode =

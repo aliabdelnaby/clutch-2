@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../widgets/custom_sign_up_form.dart';
 import '../widgets/have_an_account.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

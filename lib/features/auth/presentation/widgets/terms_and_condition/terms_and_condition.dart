@@ -1,8 +1,9 @@
-import '../../../../core/functions/navigation.dart';
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/app_text_style.dart';
-import 'custom_check_box.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/functions/navigation.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/app_text_style.dart';
+import '../custom_check_box.dart';
 
 class TermsAbdConditionWidget extends StatelessWidget {
   const TermsAbdConditionWidget({super.key});

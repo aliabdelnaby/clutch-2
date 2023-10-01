@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../core/functions/custom_toast.dart';
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -10,7 +9,7 @@ import '../../../../core/widgets/custom_btn.dart';
 import '../auth_cubit/cubit/auth_cubit.dart';
 import '../auth_cubit/cubit/auth_state.dart';
 import 'custom_text_field.dart';
-import 'terms_and_condition.dart';
+import 'terms_and_condition/terms_and_condition.dart';
 
 class CustomSignUpForm extends StatelessWidget {
   const CustomSignUpForm({super.key});
