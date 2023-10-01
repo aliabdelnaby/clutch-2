@@ -21,6 +21,7 @@ class CustomSignUpForm extends StatelessWidget {
       listener: (context, state) {
         if (state is SignUpSuccessState) {
           showToast("Account Created Successfully");
+          FirebaseAuth.instance.currentUser!.sendEmailVerification();
           customReplacementNavigate(context, '/verificationCodePage');
           FirebaseAuth.instance.signOut();
         } else if (state is SignUpFailureState) {

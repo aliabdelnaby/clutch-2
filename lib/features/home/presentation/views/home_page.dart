@@ -41,7 +41,9 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 200),
-              const Text('Welcome'),
+              FirebaseAuth.instance.currentUser!.emailVerified
+                  ? const Text('Welcome')
+                  : const Text("Please verify your email first"),
               IconButton(
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
