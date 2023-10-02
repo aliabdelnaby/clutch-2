@@ -1,10 +1,11 @@
-import 'package:clutch/core/functions/custom_toast.dart';
-import 'package:clutch/core/utils/app_colors.dart';
-import 'package:clutch/core/utils/app_strings.dart';
-import 'package:clutch/core/widgets/custom_btn.dart';
-import 'package:clutch/features/auth/presentation/auth_cubit/cubit/auth_cubit.dart';
-import 'package:clutch/features/auth/presentation/auth_cubit/cubit/auth_state.dart';
-import 'package:clutch/features/auth/presentation/widgets/custom_text_field.dart';
+import '../../../../core/functions/custom_toast.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/widgets/custom_btn.dart';
+import '../auth_cubit/cubit/auth_cubit.dart';
+import '../auth_cubit/cubit/auth_state.dart';
+import 'custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,6 +18,7 @@ class CustomResetPasswordForm extends StatelessWidget {
       listener: (context, state) {
         if (state is ResetSuccessState) {
           showToast("A password reset link has been sent to your email");
+          customReplacementNavigate(context, '/loginviewwithemail');
         } else if (state is ResetFailureState) {
           showToast(state.errMessage);
         }

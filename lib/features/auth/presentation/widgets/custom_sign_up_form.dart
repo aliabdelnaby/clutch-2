@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/functions/custom_toast.dart';
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -22,7 +23,7 @@ class CustomSignUpForm extends StatelessWidget {
         if (state is SignUpSuccessState) {
           showToast("Account Created Successfully");
           FirebaseAuth.instance.currentUser!.sendEmailVerification();
-          customReplacementNavigate(context, '/verificationCodePage');
+          customReplacementNavigate(context, '/verificationEmailPage');
           FirebaseAuth.instance.signOut();
         } else if (state is SignUpFailureState) {
           showToast(state.errMessage);

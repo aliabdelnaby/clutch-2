@@ -7,7 +7,7 @@ import '../../features/auth/presentation/views/forgot_password_view.dart';
 import '../../features/auth/presentation/views/login_view_email.dart';
 import '../../features/auth/presentation/views/sign_up_options.dart';
 import '../../features/auth/presentation/views/sign_up_view.dart';
-import '../../features/auth/presentation/views/verification_code.dart';
+import '../../features/auth/presentation/views/verification_email_view.dart';
 import '../../features/auth/presentation/widgets/terms_and_condition/terms_and_condition_body.dart';
 import '../../features/home/presentation/views/home_page.dart';
 import '../../features/onboarding/presentation/views/on_boarding_view.dart';
@@ -57,8 +57,8 @@ final GoRouter router = GoRouter(
       builder: ((context, state) => const TermsAndConditionBody()),
     ),
     GoRoute(
-      path: '/verificationCodePage',
-      builder: ((context, state) => const VerificationCodePage()),
+      path: '/verificationEmailPage',
+      builder: ((context, state) => const VerificationEmailPage()),
     ),
     GoRoute(
       path: '/addYouCarView',

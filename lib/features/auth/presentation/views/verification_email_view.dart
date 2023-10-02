@@ -1,12 +1,12 @@
-import 'package:clutch/core/functions/navigation.dart';
-import 'package:clutch/core/utils/app_colors.dart';
-import 'package:clutch/core/widgets/custom_btn.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/custom_btn.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
 
-class VerificationCodePage extends StatelessWidget {
-  const VerificationCodePage({super.key});
+class VerificationEmailPage extends StatelessWidget {
+  const VerificationEmailPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,13 +38,14 @@ class VerificationCodePage extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             CustomBtn(
-                onPressed: () {
-                  customReplacementNavigate(context, '/loginviewwithemail');
-                },
-                text: AppStrings.go,
-                height: 50,
-                width: 100,
-                backgroundColor: AppColors.primaryColor)
+              onPressed: () {
+                customReplacementNavigate(context, '/loginviewwithemail');
+              },
+              text: AppStrings.go,
+              height: 50,
+              width: 100,
+              backgroundColor: AppColors.primaryColor,
+            ),
           ],
         ),
       ),
