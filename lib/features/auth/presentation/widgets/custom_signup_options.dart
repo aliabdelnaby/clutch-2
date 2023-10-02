@@ -1,7 +1,8 @@
-import 'sign_up_options_buttons/signup_email.dart';
-import 'sign_up_options_buttons/signup_google.dart';
 import 'package:flutter/material.dart';
+
+import 'sign_up_options_buttons/signup_email.dart';
 import 'sign_up_options_buttons/signup_facebook.dart';
+import 'sign_up_options_buttons/signup_google.dart';
 
 class CustomSignUpOptions extends StatelessWidget {
   const CustomSignUpOptions({
