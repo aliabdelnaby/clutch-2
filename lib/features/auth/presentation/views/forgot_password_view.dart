@@ -1,12 +1,9 @@
+import 'package:clutch/features/auth/presentation/widgets/custom_reset_password_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../../core/utils/app_assets.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
-import '../../../../core/widgets/custom_btn.dart';
-import '../widgets/custom_text_field.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});
@@ -32,27 +29,12 @@ class ForgotPasswordView extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 44),
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 190),
-              child: CustomTextFormField(
-                hintText: AppStrings.email,
-              ),
-            ),
-            const SizedBox(height: 28),
-            CustomBtn(
-              backgroundColor: AppColors.primaryColor,
-              onPressed: () {},
-              text: AppStrings.resetYourPassword,
-              height: 42,
-              width: double.infinity,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-            ),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 44),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: SizedBox(height: 190)),
+            SliverToBoxAdapter(child: CustomResetPasswordForm()),
           ],
         ),
       ),
