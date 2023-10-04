@@ -19,10 +19,9 @@ class CustomLoginForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is LoginSuccessState) {
-          // showToast("Please go to your email to verify your account");
           if (FirebaseAuth.instance.currentUser!.emailVerified) {
             customReplacementNavigate(context, '/AddYouCarView');
-            showToast("Login Successfully");
+            showToast("Welcome Back!");
           }
         } else if (state is LoginFailureState) {
           showToast(state.errMessage);
@@ -59,21 +58,23 @@ class CustomLoginForm extends StatelessWidget {
                 obscureText: authCubit.obscurePasswordTextValue,
               ),
               const SizedBox(height: 40),
-              CustomBtn(
-                onPressed: () {
-                  if (authCubit.loginForm.currentState!.validate()) {
-                    authCubit.loginWithEmailAndPassword();
-                  }
-                },
-                backgroundColor: AppColors.primaryColor,
-                text: AppStrings.login,
-                height: 45,
-                width: double.infinity,
-                color: AppColors.primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
+              state is LoginLoadingState
+                  ? CircularProgressIndicator(color: AppColors.primaryColor)
+                  : CustomBtn(
+                      onPressed: () {
+                        if (authCubit.loginForm.currentState!.validate()) {
+                          authCubit.loginWithEmailAndPassword();
+                        }
+                      },
+                      backgroundColor: AppColors.primaryColor,
+                      text: AppStrings.login,
+                      height: 45,
+                      width: double.infinity,
+                      color: AppColors.primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
             ],
           ),
         );
