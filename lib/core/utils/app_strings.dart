@@ -44,6 +44,6 @@ abstract class AppStrings {
       //!Last Maintenance
       lastMaintenanceAppBar = "Last Maintenance",
       date = "Date",
-      whatDidYouDo = "What Did Your Do",
+      whatDidYouDo = "What Did You Do",
       confirm = "Confirm";
 }

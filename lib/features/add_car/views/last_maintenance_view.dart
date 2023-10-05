@@ -1,3 +1,9 @@
+import 'package:clutch/core/utils/app_colors.dart';
+import 'package:clutch/core/widgets/custom_btn.dart';
+import 'package:clutch/features/add_car/widgets/date_text_field.dart';
+import 'package:clutch/features/add_car/widgets/dropdown_search_widget.dart';
+import 'package:clutch/features/add_car/widgets/lists/what_did_u_do_list.dart';
+
 import '../../../core/functions/navigation.dart';
 import '../../../core/utils/app_assets.dart';
 import '../../../core/utils/app_strings.dart';
@@ -36,6 +42,32 @@ class LastMaintenanceView extends StatelessWidget {
                 Icons.logout,
               ),
             ),
+          ],
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 31),
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            const SliverToBoxAdapter(child: SizedBox(height: 83)),
+            const SliverToBoxAdapter(child: DatePickerTextField()),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: lastMaintenanceOptions,
+                hintText: AppStrings.whatDidYouDo,
+                selectedItem: AppStrings.whatDidYouDo,
+              ),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 30)),
+            SliverToBoxAdapter(
+                child: CustomBtn(
+              onPressed: () {},
+              text: AppStrings.confirm,
+              height: 42,
+              width: 217,
+              backgroundColor: AppColors.primaryColor,
+            )),
           ],
         ),
       ),
