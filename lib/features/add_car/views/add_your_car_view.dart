@@ -1,13 +1,16 @@
+import 'package:clutch/features/add_car/widgets/dropdown_search_widget.dart';
+import 'package:clutch/features/add_car/widgets/trim_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../core/functions/navigation.dart';
 import '../../../core/utils/app_assets.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_strings.dart';
 import '../../../core/utils/app_text_style.dart';
 import '../../../core/widgets/custom_btn.dart';
+import '../widgets/all_models_list.dart';
+import '../widgets/brand_name_list.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class AddYouCarView extends StatelessWidget {
@@ -50,12 +53,30 @@ class AddYouCarView extends StatelessWidget {
             const SliverToBoxAdapter(child: SizedBox(height: 83)),
             const SliverToBoxAdapter(
                 child: CustomTextFormField(hintText: AppStrings.year)),
-            const SliverToBoxAdapter(
-                child: CustomTextFormField(hintText: AppStrings.brandName)),
-            const SliverToBoxAdapter(
-                child: CustomTextFormField(hintText: AppStrings.allModels)),
-            const SliverToBoxAdapter(
-                child: CustomTextFormField(hintText: AppStrings.trim)),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: branNameList,
+                hintText: AppStrings.brandName,
+                selectedItem: AppStrings.brandName,
+              ),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 15)),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: allModelsList,
+                hintText: AppStrings.allModels,
+                selectedItem: AppStrings.allModels,
+              ),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 15)),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: trimList,
+                hintText: AppStrings.trim,
+                selectedItem: AppStrings.trim,
+              ),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 15)),
             const SliverToBoxAdapter(
                 child: CustomTextFormField(hintText: AppStrings.kilometeres)),
             const SliverToBoxAdapter(child: SizedBox(height: 10)),
