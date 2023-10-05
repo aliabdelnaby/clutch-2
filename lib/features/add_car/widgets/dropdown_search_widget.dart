@@ -24,6 +24,7 @@ class DropDownSearchWidget extends StatelessWidget {
         showSearchBox: true,
         searchFieldProps: TextFieldProps(
           decoration: InputDecoration(
+            hintText: 'Search ..',
             enabledBorder: getBorderStyle(),
             focusedBorder: getBorderStyle(),
           ),
