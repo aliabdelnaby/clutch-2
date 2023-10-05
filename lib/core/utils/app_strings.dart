@@ -42,6 +42,7 @@ abstract class AppStrings {
       kilometeres = "Kilometers",
       go = "GO",
       //!Last Maintenance
+      lastMaintenanceAppBar = "Last Maintenance",
       date = "Date",
       whatDidYouDo = "What Did Your Do",
       confirm = "Confirm";

@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
+
 import '../../../../core/functions/navigation.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/widgets/custom_btn.dart';
-import 'package:flutter/material.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/widgets/custom_btn.dart';
 
 class VerificationEmailPage extends StatelessWidget {
   const VerificationEmailPage({super.key});

@@ -1,5 +1,5 @@
-import 'package:clutch/features/add_car/widgets/dropdown_search_widget.dart';
-import 'package:clutch/features/add_car/widgets/trim_list.dart';
+import '../widgets/dropdown_search_widget.dart';
+import '../widgets/lists/trim_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,8 +9,8 @@ import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_strings.dart';
 import '../../../core/utils/app_text_style.dart';
 import '../../../core/widgets/custom_btn.dart';
-import '../widgets/all_models_list.dart';
-import '../widgets/brand_name_list.dart';
+import '../widgets/lists/all_models_list.dart';
+import '../widgets/lists/brand_name_list.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class AddYouCarView extends StatelessWidget {
@@ -82,7 +82,9 @@ class AddYouCarView extends StatelessWidget {
             const SliverToBoxAdapter(child: SizedBox(height: 10)),
             SliverToBoxAdapter(
               child: CustomBtn(
-                onPressed: () {},
+                onPressed: () {
+                  customNavigate(context, '/lastMaintenanceView');
+                },
                 text: AppStrings.go,
                 height: 45,
                 width: 84,
