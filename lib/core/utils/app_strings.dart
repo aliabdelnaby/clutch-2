@@ -45,5 +45,6 @@ abstract class AppStrings {
       lastMaintenanceAppBar = "Last Maintenance",
       date = "Date",
       whatDidYouDo = "What Did You Do",
-      confirm = "Confirm";
+      confirm = "Confirm",
+      other = "Other";
 }

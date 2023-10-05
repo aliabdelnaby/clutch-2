@@ -1,4 +1,4 @@
-List<String> lastMaintenanceOptions = [
+List<String> lastMaintenanceList = [
   'Oil change',
   'Air filter replacement',
   'Spark plug replacement',
@@ -24,5 +24,6 @@ List<String> lastMaintenanceOptions = [
   'Radiator flush',
   'Wiper blade replacement',
   'Headlight bulb replacement',
+  'Other',
   // Add more options
 ];
