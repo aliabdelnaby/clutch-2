@@ -26,10 +26,15 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     bool isOnBoardingVisited =
         getIt<CacheHelper>().getData(key: 'isOnBoardingVisited') ?? false;
     if (isOnBoardingVisited == true) {
-      (FirebaseAuth.instance.currentUser != null &&
-              FirebaseAuth.instance.currentUser!.emailVerified)
-          ? delayedNavigate(context, "/addYouCarView")
-          : delayedNavigate(context, "/signupoptions");
+      // (FirebaseAuth.instance.currentUser != null &&
+      //         FirebaseAuth.instance.currentUser!.emailVerified)
+      FirebaseAuth.instance.currentUser == null
+          ? delayedNavigate(context, "/signupoptions")
+          : FirebaseAuth.instance.currentUser!.emailVerified == true
+              ? delayedNavigate(context, "/addYouCarView")
+              : delayedNavigate(context, "/signupoptions");
+      // delayedNavigate(context, "/addYouCarView")
+      // : delayedNavigate(context, "/signupoptions");
     } else {
       delayedNavigate(context, "/onboarding");
     }
