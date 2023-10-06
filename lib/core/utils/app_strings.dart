@@ -46,5 +46,5 @@ abstract class AppStrings {
       date = "Date",
       whatDidYouDo = "What Did You Do",
       confirm = "Confirm",
-      other = "Other";
+      other = "Other (write N/A if nothing else)";
 }
