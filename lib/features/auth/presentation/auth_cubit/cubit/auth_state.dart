@@ -22,14 +22,14 @@ final class LoginFailureState extends AuthState {
   LoginFailureState({required this.errMessage});
 }
 
-final class ResetLoadingState extends AuthState {}
+final class ResetPasswordLoadingState extends AuthState {}
 
-final class ResetSuccessState extends AuthState {}
+final class ResetPasswordSuccessState extends AuthState {}
 
-final class ResetFailureState extends AuthState {
+final class ResetPasswordFailureState extends AuthState {
   final String errMessage;
 
-  ResetFailureState({required this.errMessage});
+  ResetPasswordFailureState({required this.errMessage});
 }
 
 final class TermsAndComnditionUpateState extends AuthState {}

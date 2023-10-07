@@ -74,12 +74,12 @@ class AuthCubit extends Cubit<AuthState> {
 
   sendPasswordResetEmail() async {
     try {
-      emit(ResetLoadingState());
+      emit(ResetPasswordLoadingState());
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email!);
-      emit(ResetSuccessState());
+      emit(ResetPasswordSuccessState());
     } catch (e) {
       print(e.toString());
-      emit(ResetFailureState(errMessage: e.toString()));
+      emit(ResetPasswordFailureState(errMessage: e.toString()));
     }
   }
 

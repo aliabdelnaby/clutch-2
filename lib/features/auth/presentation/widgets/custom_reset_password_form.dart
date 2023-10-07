@@ -17,10 +17,10 @@ class CustomResetPasswordForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is ResetSuccessState) {
+        if (state is ResetPasswordSuccessState) {
           showToast("A password reset link has been sent to your email");
           customReplacementNavigate(context, '/loginviewwithemail');
-        } else if (state is ResetFailureState) {
+        } else if (state is ResetPasswordFailureState) {
           showToast(state.errMessage);
         }
       },
@@ -37,25 +37,25 @@ class CustomResetPasswordForm extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 28),
-              state is ResetLoadingState
+              state is ResetPasswordLoadingState
                   ? CircularProgressIndicator(
                       color: AppColors.primaryColor,
                     )
-                  : 
-              CustomBtn(
-                backgroundColor: AppColors.primaryColor,
-                onPressed: () {
-                  if (authCubit.resetPasswordForm.currentState!.validate()) {
-                    authCubit.sendPasswordResetEmail();
-                  }
-                },
-                text: AppStrings.resetYourPassword,
-                height: 42,
-                width: double.infinity,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
+                  : CustomBtn(
+                      backgroundColor: AppColors.primaryColor,
+                      onPressed: () {
+                        if (authCubit.resetPasswordForm.currentState!
+                            .validate()) {
+                          authCubit.sendPasswordResetEmail();
+                        }
+                      },
+                      text: AppStrings.resetYourPassword,
+                      height: 42,
+                      width: double.infinity,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
             ],
           ),
         );
