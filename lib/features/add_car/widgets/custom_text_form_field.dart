@@ -26,6 +26,13 @@ class CustomTextFormField extends StatelessWidget {
           focusedBorder: getBorderStyle(),
         ),
         onChanged: onChanged,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "This field is required";
+          } else {
+            return null;
+          }
+        },
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:clutch/features/add_car/presentation/add_car_cubit/cubit/add_car_cubit.dart';
 import 'package:clutch/features/add_car/views/add_your_car_view.dart';
 import 'package:clutch/features/add_car/views/last_maintenance_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,11 +63,17 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/addYouCarView',
-      builder: ((context, state) => const AddYouCarView()),
+      builder: ((context, state) => BlocProvider(
+            create: (context) => AddCarCubit(),
+            child: const AddYouCarView(),
+          )),
     ),
     GoRoute(
       path: '/lastMaintenanceView',
-      builder: ((context, state) => const LastMaintenanceView()),
+      builder: ((context, state) => BlocProvider(
+            create: (context) => AddCarCubit(),
+            child: const LastMaintenanceView(),
+          )),
     ),
   ],
 );

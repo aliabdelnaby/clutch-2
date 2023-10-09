@@ -6,9 +6,9 @@ final class AddCarLoadingState extends AddCarState {}
 
 final class AddCarSuccessgState extends AddCarState {}
 
-final class AddCarFailuregState extends AddCarState {
+final class AddCarFailureState extends AddCarState {
   final String errMessage;
 
-  AddCarFailuregState({required this.errMessage});
+  AddCarFailureState({required this.errMessage});
 }
 
