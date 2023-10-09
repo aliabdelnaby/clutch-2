@@ -1,15 +1,15 @@
-import 'package:clutch/features/add_car/widgets/dropdown_brand_name.dart';
-import 'package:clutch/features/add_car/widgets/dropdown_models.dart';
-import 'package:clutch/features/add_car/widgets/dropdown_trim.dart';
+import '../widgets/dropdown_brand_name.dart';
+import '../widgets/dropdown_models.dart';
+import '../widgets/dropdown_trim.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../core/functions/navigation.dart';
-import '../../../core/utils/app_assets.dart';
-import '../../../core/utils/app_colors.dart';
-import '../../../core/utils/app_strings.dart';
-import '../../../core/utils/app_text_style.dart';
-import '../../../core/widgets/custom_btn.dart';
+import '../../../../core/functions/navigation.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/widgets/custom_btn.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class AddYouCarView extends StatelessWidget {

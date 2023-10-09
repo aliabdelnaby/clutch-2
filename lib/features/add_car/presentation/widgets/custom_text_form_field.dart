@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/app_colors.dart';
-import '../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({super.key, required this.hintText});
