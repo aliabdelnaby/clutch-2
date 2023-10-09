@@ -1,6 +1,7 @@
-import '../widgets/dropdown_brand_name.dart';
-import '../widgets/dropdown_models.dart';
-import '../widgets/dropdown_trim.dart';
+import 'package:clutch/features/add_car/widgets/dropdown_search_widget.dart';
+import 'package:clutch/features/add_car/widgets/lists/all_models_list.dart';
+import 'package:clutch/features/add_car/widgets/lists/brand_name_list.dart';
+import 'package:clutch/features/add_car/widgets/lists/trim_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -52,16 +53,28 @@ class AddYouCarView extends StatelessWidget {
             const SliverToBoxAdapter(child: SizedBox(height: 83)),
             const SliverToBoxAdapter(
                 child: CustomTextFormField(hintText: AppStrings.year)),
-            const SliverToBoxAdapter(
-              child: DropDownBrandNameWidget(),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: branNameList,
+                hintText: AppStrings.brandName,
+                selectedItem: AppStrings.brandName,
+              ),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 15)),
-            const SliverToBoxAdapter(
-              child: DropDownAllModelsWidget(),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: allModelsList,
+                hintText: AppStrings.allModels,
+                selectedItem: AppStrings.allModels,
+              ),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 15)),
-            const SliverToBoxAdapter(
-              child: DropDownTrimWidget(),
+            SliverToBoxAdapter(
+              child: DropDownSearchWidget(
+                listItem: trimList,
+                hintText: AppStrings.trim,
+                selectedItem: AppStrings.trim,
+              ),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 15)),
             const SliverToBoxAdapter(

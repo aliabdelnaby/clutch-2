@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, required this.hintText});
+  const CustomTextFormField({
+    super.key,
+    required this.hintText,
+    this.onChanged,
+  });
+
   final String hintText;
+  final void Function(String)? onChanged;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
           enabledBorder: getBorderStyle(),
           focusedBorder: getBorderStyle(),
         ),
+        onChanged: onChanged,
       ),
     );
   }
