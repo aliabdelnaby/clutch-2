@@ -42,7 +42,6 @@ class AuthCubit extends Cubit<AuthState> {
         emit(SignUpFailureState(errMessage: e.code));
       }
     } catch (e) {
-      print(e.toString());
       emit(SignUpFailureState(errMessage: e.toString()));
     }
   }
@@ -69,7 +68,6 @@ class AuthCubit extends Cubit<AuthState> {
         emit(LoginFailureState(errMessage: 'Check your Email and password!'));
       }
     } catch (e) {
-      print(e.toString());
       emit(LoginFailureState(errMessage: e.toString()));
     }
   }
@@ -80,7 +78,6 @@ class AuthCubit extends Cubit<AuthState> {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email!);
       emit(ResetPasswordSuccessState());
     } catch (e) {
-      print(e.toString());
       emit(ResetPasswordFailureState(errMessage: e.toString()));
     }
   }

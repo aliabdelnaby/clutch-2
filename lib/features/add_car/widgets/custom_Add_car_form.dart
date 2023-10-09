@@ -46,6 +46,13 @@ class CustomAddCarForm extends StatelessWidget {
                 onChanged: (brandName) {
                   addCarCubit.brandName = brandName;
                 },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "This field is required";
+                  } else {
+                    return null;
+                  }
+                },
               ),
               const SizedBox(height: 15),
               DropDownSearchWidget(
@@ -55,6 +62,13 @@ class CustomAddCarForm extends StatelessWidget {
                 onChanged: (allModels) {
                   addCarCubit.allModels = allModels;
                 },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "This field is required";
+                  } else {
+                    return null;
+                  }
+                },
               ),
               const SizedBox(height: 15),
               DropDownSearchWidget(
@@ -63,6 +77,13 @@ class CustomAddCarForm extends StatelessWidget {
                 selectedItem: AppStrings.trim,
                 onChanged: (trim) {
                   addCarCubit.trim = trim;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "This field is required";
+                  } else {
+                    return null;
+                  }
                 },
               ),
               const SizedBox(height: 15),

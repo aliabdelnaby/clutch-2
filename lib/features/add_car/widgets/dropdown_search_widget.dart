@@ -10,13 +10,14 @@ class DropDownSearchWidget extends StatelessWidget {
     required this.hintText,
     required this.selectedItem,
     this.onChanged,
+    this.validator,
   });
 
   final List<String> listItem;
   final String hintText;
   final String selectedItem;
   final void Function(String?)? onChanged;
-
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return DropdownSearch<String>(
@@ -29,7 +30,7 @@ class DropDownSearchWidget extends StatelessWidget {
             hintText: 'Search ..',
             enabledBorder: getBorderStyle(),
             focusedBorder: getBorderStyle(),
-          ),
+          ), 
         ),
       ),
       items: listItem,
@@ -44,13 +45,7 @@ class DropDownSearchWidget extends StatelessWidget {
       ),
       onChanged: onChanged,
       selectedItem: selectedItem,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "This field is required";
-        } else {
-          return null;
-        }
-      },
+      validator:validator,
     );
   }
 }

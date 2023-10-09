@@ -37,7 +37,7 @@ class CustomPinCodeFields extends StatelessWidget {
       backgroundColor: Colors.white,
       enableActiveFill: true,
       onCompleted: (v) {
-        print("Completed");
+        // print("Completed");
       },
     );
   }
