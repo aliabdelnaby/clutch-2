@@ -19,7 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> loginForm = GlobalKey();
   GlobalKey<FormState> resetPasswordForm = GlobalKey();
 
-  signUpWithEmailAndPassword() async {
+  Future<void> signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -30,27 +30,31 @@ class AuthCubit extends Cubit<AuthState> {
       await verifyEmail();
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        emit(SignUpFailureState(
-            errMessage: 'The password provided is too weak.'));
-      } else if (e.code == 'email-already-in-use') {
-        emit(SignUpFailureState(
-            errMessage: 'The account already exists for that email.'));
-      } else if (e.code == 'invalid-email') {
-        emit(SignUpFailureState(errMessage: 'The email is invalid.'));
-      } else {
-        emit(SignUpFailureState(errMessage: e.code));
-      }
+      _signUpHandleException(e);
     } catch (e) {
       emit(SignUpFailureState(errMessage: e.toString()));
     }
   }
 
-  verifyEmail() async {
+  void _signUpHandleException(FirebaseAuthException e) {
+    if (e.code == 'weak-password') {
+      emit(
+          SignUpFailureState(errMessage: 'The password provided is too weak.'));
+    } else if (e.code == 'email-already-in-use') {
+      emit(SignUpFailureState(
+          errMessage: 'The account already exists for that email.'));
+    } else if (e.code == 'invalid-email') {
+      emit(SignUpFailureState(errMessage: 'The email is invalid.'));
+    } else {
+      emit(SignUpFailureState(errMessage: e.code));
+    }
+  }
+
+  Future<void> verifyEmail() async {
     await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
-  loginWithEmailAndPassword() async {
+  Future<void> loginWithEmailAndPassword() async {
     try {
       emit(LoginLoadingState());
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -59,20 +63,24 @@ class AuthCubit extends Cubit<AuthState> {
       );
       emit(LoginSuccessState());
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        emit(LoginFailureState(errMessage: 'No user found for that email.'));
-      } else if (e.code == 'wrong-password') {
-        emit(LoginFailureState(
-            errMessage: 'Wrong password provided for that user.'));
-      } else {
-        emit(LoginFailureState(errMessage: 'Check your Email and password!'));
-      }
+      _loginHandleException(e);
     } catch (e) {
       emit(LoginFailureState(errMessage: e.toString()));
     }
   }
 
-  sendPasswordResetEmail() async {
+  void _loginHandleException(FirebaseAuthException e) {
+    if (e.code == 'user-not-found') {
+      emit(LoginFailureState(errMessage: 'No user found for that email.'));
+    } else if (e.code == 'wrong-password') {
+      emit(LoginFailureState(
+          errMessage: 'Wrong password provided for that user.'));
+    } else {
+      emit(LoginFailureState(errMessage: 'Check your Email and password!'));
+    }
+  }
+
+  Future<void> sendPasswordResetEmail() async {
     try {
       emit(ResetPasswordLoadingState());
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email!);
@@ -82,12 +90,12 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  updateTermsAndConditionCheckBox({required newValue}) {
+  void updateTermsAndConditionCheckBox({required newValue}) {
     termsAndConditionCheckBoxValue = newValue;
     emit(TermsAndComnditionUpateState());
   }
 
-  obscurePasswordText() {
+  void obscurePasswordText() {
     if (obscurePasswordTextValue == true) {
       obscurePasswordTextValue = false;
     } else {
@@ -96,7 +104,7 @@ class AuthCubit extends Cubit<AuthState> {
     emit(ObscurePasswordTextUpdateState());
   }
 
-  addUserProfile() async {
+  Future<void> addUserProfile() async {
     CollectionReference users = FirebaseFirestore.instance.collection("users");
     await users.add({
       "name": name,

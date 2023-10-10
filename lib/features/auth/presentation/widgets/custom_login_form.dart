@@ -62,9 +62,9 @@ class CustomLoginForm extends StatelessWidget {
               state is LoginLoadingState
                   ? CircularProgressIndicator(color: AppColors.primaryColor)
                   : CustomBtn(
-                      onPressed: () {
+                      onPressed: () async {
                         if (authCubit.loginForm.currentState!.validate()) {
-                          authCubit.loginWithEmailAndPassword();
+                          await authCubit.loginWithEmailAndPassword();
                         }
                       },
                       backgroundColor: AppColors.primaryColor,

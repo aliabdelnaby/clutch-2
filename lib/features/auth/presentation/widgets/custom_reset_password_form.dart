@@ -43,10 +43,10 @@ class CustomResetPasswordForm extends StatelessWidget {
                     )
                   : CustomBtn(
                       backgroundColor: AppColors.primaryColor,
-                      onPressed: () {
+                      onPressed: () async {
                         if (authCubit.resetPasswordForm.currentState!
                             .validate()) {
-                          authCubit.sendPasswordResetEmail();
+                          await authCubit.sendPasswordResetEmail();
                         }
                       },
                       text: AppStrings.resetYourPassword,

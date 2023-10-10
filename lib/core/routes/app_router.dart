@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/auth_cubit/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/views/forgot_password_view.dart';
 import '../../features/auth/presentation/views/login_view_email.dart';
-import '../../features/auth/presentation/views/sign_up_options.dart';
+import '../../features/auth/presentation/views/sign_up_options_view.dart';
 import '../../features/auth/presentation/views/sign_up_view.dart';
 import '../../features/auth/presentation/views/verification_email_view.dart';
 import '../../features/auth/presentation/widgets/terms_and_condition/terms_and_condition_body.dart';

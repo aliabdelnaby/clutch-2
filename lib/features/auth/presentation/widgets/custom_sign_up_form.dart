@@ -22,8 +22,6 @@ class CustomSignUpForm extends StatelessWidget {
         if (state is SignUpSuccessState) {
           showToast("Successfully, Check your email to verfiy your account");
           customReplacementNavigate(context, '/verificationEmailPage');
-          // FirebaseAuth.instance.currentUser!.sendEmailVerification();
-          // FirebaseAuth.instance.signOut();
         } else if (state is SignUpFailureState) {
           showToast(state.errMessage);
         }
@@ -96,10 +94,10 @@ class CustomSignUpForm extends StatelessWidget {
                       color: AppColors.primaryColor,
                     )
                   : CustomBtn(
-                      onPressed: () {
+                      onPressed: () async {
                         if (authCubit.termsAndConditionCheckBoxValue == true) {
                           if (authCubit.signupForm.currentState!.validate()) {
-                            authCubit.signUpWithEmailAndPassword();
+                            await authCubit.signUpWithEmailAndPassword();
                           }
                         }
                       },
